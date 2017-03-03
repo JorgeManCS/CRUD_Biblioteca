@@ -1,0 +1,89 @@
+<div class="pages">
+            <!-- PANEL DE INICIO -->
+            <div class="panel" id="main" data-title="Inicio" data-selected="true">
+                <h1>USUARIO CRUD</h1>
+                <p>Ejemplo de APP híbrida que produce/consume un servicio REST</p>
+            </div>
+            <!-- PANEL PARA CREAR USUARIOS -->
+            <div class="panel" id="c_usuario" data-title="Create Usuario">
+                <h1>Create Usuario</h1>
+                <div class="container">
+                 <form>
+                  <div class="form-group">
+                    <input type="text" id="c_us_nombre" class="form-control" placeholder="Nombre" >
+                  </div>
+                  <div class="form-group">
+                    <input type="text" id="c_us_apellido" class="form-control" placeholder="Apellidos"  >
+                  </div>
+                  <div class="formusr-group">
+                    <input type="text" id="c_us_dni" class="form-control" placeholder="DNI"  >
+                  </div>
+                  <div class="form-group">
+                    <input type="number" id="c_us_telefono" class="form-control" placeholder="Telefono"  >
+                  </div>
+                  <div class="form-group">
+                    <div class="btn btn-danger" onclick="$.usuario.UsuarioCreateREST()">Crear</div>
+                  </div>
+                </form>
+                </div>
+            </div>
+            <!-- PANEL PARA LEER USUARIOS -->
+            <div class="panel" id="r_usuario" data-title="Read Usuario">
+                <h1>Read Usuario</h1>
+            </div>
+            <!-- PANELES PARA ACTUALIZAR SELECCIÓN Y FORMULARIO -->
+            <div class="panel" id="u_usuario" data-title="Update Usuario">
+                <h1>Update Usuario</h1>
+            </div>
+            <div class="panel" id="uf_usuario" data-title="Update Usuario">
+                <h1>Update Usuario</h1>
+                <div class="container">
+                 <form>
+                  <div class="form-group">
+                    <input type="hidden" id="u_us_id" class="form-control" placeholder="ID del Usuario" >
+                  </div>   
+                  <div class="form-group">
+                    <input type="text" id="u_us_nombre" class="form-control" placeholder="Nombre" >
+                  </div>
+                  <div class="form-group">
+                    <input type="text" id="u_us_apellido" class="form-control" placeholder="Apellidos"  >
+                  </div>
+                  <div class="form-group">
+                    <input type="text" id="u_us_dni" class="form-control" placeholder="DNI"  >
+                  </div>
+                  <div class="form-group">
+                    <input type="number" id="u_us_telefono" class="form-control" placeholder="Telefono"  >
+                  </div>
+                  <div class="form-group">
+                    <div class="btn btn-danger" onclick="$.usuario.UsuarioUpdateREST(1,1)">Actualizar</div>
+                  </div>
+                </form>
+                </div>
+            </div>
+            <!-- PANEL PARA BORRAR EL USUARIO -->
+            <div class="panel" id="d_usuario" data-title="Delete Usuario">
+                <h1>Delete Usuario</h1>
+            </div>
+            <div class="panel" id="err_usuario" data-title="ERROR">
+                <h1>Panel para la gestión de errores</h1>
+            </div>
+        </div>
+
+        <nav id="left">
+            <div class="view active">
+                <header>
+                    <h1>Left</h1>
+                </header>
+                <div class="pages">
+                    <div class="panel active" id="navPage1" data-title="Foobar">
+                        <ul class="list">
+                            <li><a href="#main" onclick="$.afui.clearHistory()">Inicio</a></li>
+                            <li><a href="#c_usuario" onclick="$.afui.clearHistory();$.usuario.UsuarioCreateREST();">Crear Usuario</a></li>
+                            <li><a href="#r_usuario" onclick="$.afui.clearHistory();$.usuario.UsuarioReadREST();">Leer Usuario</a></li>
+                            <li><a href="#u_usuario" onclick="$.afui.clearHistory();$.usuario.UsuarioUpdateREST()">Actualizar Usuario</a></li>
+                            <li><a href="#d_usuario" onclick="$.afui.clearHistory();$.usuario.UsuarioDeleteREST()">Borrar Usuario</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
